@@ -1,5 +1,8 @@
+%h1<
+  = @user.username
+  's board
 #pins.transitions-enabled
-  - @pins.each do |pin|
+  - @user.find_voted_items.each do |pin|
     .box.panel.panel-default
       = link_to (image_tag pin.image.url), pin
       .panel-body

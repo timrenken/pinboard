@@ -13,7 +13,7 @@
           .col-md-6
             %p
             Submitted by
-            = @pin.user.username
+            = link_to @pin.user.username, user_path(@pin.user.username)
             %p
             = time_ago_in_words(@pin.created_at)
             ago

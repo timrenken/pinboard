@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :comments
   
   devise_for :users, controllers: {registrations: 'registrations'}
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
     end
     resources :comments
   end
+  
+  resources :users, only: [:show]
   
   root "pins#index"
 end
