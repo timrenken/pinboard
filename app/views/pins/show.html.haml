@@ -8,6 +8,8 @@
         %p.description= @pin.description
       .panel-footer
         .row
+          .col-md-1
+            %img{ gravatar_attrs(@pin.user, :size => 45) }/
           .col-md-6
             %p
             Submitted by
@@ -15,7 +17,7 @@
             %p
             = time_ago_in_words(@pin.created_at)
             ago
-          .col-md-6
+          .col-md-5
             .btn-group.pull-right
               = link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do
                 %span.glyphicon.glyphicon-heart

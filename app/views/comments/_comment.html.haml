@@ -1,0 +1,14 @@
+= div_for(comment) do
+  .panel.panel-default
+    .panel-body
+      .col-md-1
+        %img{ gravatar_attrs(comment.user, :size => 45) }/
+      .col-md-6
+        %h4
+          %p= comment.user.username
+      .col-md-5
+        .btn-group.pull-right
+          - if comment.user == current_user
+            = link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"
+    .panel-footer
+      %h4= comment.body
