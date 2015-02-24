@@ -23,3 +23,9 @@
               - if @pin.user == current_user
                 = link_to "Edit", edit_pin_path, class: "btn btn-default"
                 = link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
+    = render :partial => @pin.comments
+    - if user_signed_in?
+      = simple_form_for [@pin, Comment.new] do |f|
+        .form-group
+          = f.input :body, input_html: { class: "form-control" }
+        = f.button :submit, class: "btn btn-primary"
