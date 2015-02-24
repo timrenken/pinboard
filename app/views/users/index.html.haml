@@ -1,0 +1,9 @@
+#pins
+  - @users.each do |user|
+    .box.panel.panel-default
+      .panel-body
+        %h2= link_to user.username, user_path(user.username)
+      .panel-footer
+        %p
+        Total number of Pins:
+        =user.pins.count
