@@ -11,7 +11,7 @@
           .col-md-6
             %p
             Submitted by
-            = @pin.user.email
+            = @pin.user.username
             %p
             = time_ago_in_words(@pin.created_at)
             ago
@@ -22,7 +22,7 @@
                   = @pin.get_upvotes.size
               - if @pin.user == current_user
                 = link_to "Edit", edit_pin_path, class: "btn btn-default"
-                = link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
+                = link_to "Delete", pin_path, method: :delete, class: "btn btn-default"
     = render :partial => @pin.comments
     - if user_signed_in?
       = simple_form_for [@pin, Comment.new] do |f|
