@@ -2,7 +2,8 @@
   .panel.panel-default
     .panel-body
       .col-md-1
-        %img{ gravatar_attrs(comment.user, :size => 45) }/
+        = link_to user_path(comment.user.username) do
+          %img{ gravatar_attrs(comment.user, :size => 45) }/
       .col-md-6
         %h4
           %p= link_to comment.user.username, user_path(comment.user.username)

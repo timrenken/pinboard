@@ -1,7 +1,8 @@
 #pins
   - @users.each do |user|
     .box.panel.panel-default
-      %img{ gravatar_attrs(user, :size => 150) }/
+      = link_to user_path(user.username) do
+        %img{ gravatar_attrs(user, :size => 150) }/
       .panel-body
         %h2= link_to user.username, user_path(user.username)
       .panel-footer
