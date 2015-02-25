@@ -26,6 +26,7 @@ gem 'paperclip', '~> 4.2.1'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'gravatarify', '~> 3.0.0'
+gem 'will_paginate', '~> 3.0.6'
 
 group :production do
   gem 'rails_12factor'

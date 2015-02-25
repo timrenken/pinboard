@@ -9,3 +9,5 @@
         = link_to pin.user.username, user_path(pin.user.username)
         %p
         = pluralize(pin.comments.count, "comment")
+.text-center
+  %h4= will_paginate @pins, :page_entries_info => true
