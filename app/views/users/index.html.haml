@@ -1,9 +1,10 @@
 #pins
   - @users.each do |user|
     .box.panel.panel-default
+      %img{ gravatar_attrs(user, :size => 150) }/
       .panel-body
         %h2= link_to user.username, user_path(user.username)
       .panel-footer
         %p
-        Total number of Pins:
+        Total number of created Pins:
         =user.pins.count

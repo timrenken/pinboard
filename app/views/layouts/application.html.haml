@@ -13,6 +13,7 @@
         %li= link_to "New Pin", new_pin_path
       - if user_signed_in?
         %ul.nav.navbar-nav.navbar-right
+          %li= link_to "All Users", users_path
           %li
             %img{ gravatar_attrs(current_user, :size => 49) }/
           %li= link_to current_user.username, user_path(current_user.username)
